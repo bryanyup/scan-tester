@@ -46,7 +46,9 @@ function App() {
 
     const scan = async () => {
       //Step 1. Setting Up the Camera
-      const camera = await navigator.mediaDevices.getUserMedia({ video: true })
+      const camera = await navigator.mediaDevices.getUserMedia({ 
+        video: { facingMode: 'environment' } 
+      })
       videoRef.current.srcObject = camera
       videoRef.current.play()
 
